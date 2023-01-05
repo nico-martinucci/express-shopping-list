@@ -19,5 +19,8 @@
   "homepage": "https://github.com/nico-martinucci/express-shopping-list#readme",
   "dependencies": {
     "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "supertest": "^6.3.3"
   }
 }
