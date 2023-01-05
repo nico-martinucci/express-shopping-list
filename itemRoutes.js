@@ -12,12 +12,14 @@ router.get("/", function(req, res) {
 
 /** POST /items -- add item to list; return new item. */
 router.post("/", function(req, res) {
-    
+    items.push(req.body);
+    res.json({ added: req.body })
 });
 
 /** GET /items/:name -- return specific items. */
 router.get("/:name", function(req, res) {
-    
+    const item = items.find(i => i.name === req.params.name);
+    res.json(item);
 });
 
 /** PATCH /items/:name -- modify specific items; return modified item. */
@@ -29,3 +31,5 @@ router.patch("/:name", function(req, res) {
 router.delete("/:name", function(req, res) {
     
 });
+
+module.exports=router;
